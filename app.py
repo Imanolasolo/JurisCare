@@ -87,6 +87,8 @@ def main():
         st.header("AI_Medicare")
         st.text("Tu asistente virtual")
         st.text ("La Inteligencia Artificial al servicio de la salud")
+        st.info("Interactúa con nuestro chat y descubre que es lo que la IA puede hacer por tu negocio o proyecto")
+        
     st.write("<h5><br>Pregunte lo que necesite sobre AI medicare, no importa el idioma, somos multiculturales!:</h5>", unsafe_allow_html=True)
     user_question = st.text_input(label="", placeholder="Dinos quien eres y que haces y podremos ayudarte mejor...")
     if user_question:
