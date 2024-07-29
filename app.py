@@ -60,7 +60,7 @@ def handle_userInput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="AI Medicare", page_icon=".")
+    st.set_page_config(page_title="AI JurisCare", page_icon=":gavel:")
     st.write(css, unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
@@ -72,7 +72,7 @@ def main():
         st.session_state.pdf_text = ""
 
     # Pre-train the model with the PDF
-    sample_pdf_path = os.path.join(os.getcwd(), "Base_conocimiento_Medicare.pdf")
+    sample_pdf_path = os.path.join(os.getcwd(), "Base_Conocimiento_JurisCare.pdf")
     st.session_state.pdf_files = [sample_pdf_path]
 
     raw_text = get_pdf_text(st.session_state.pdf_files)
@@ -82,20 +82,20 @@ def main():
     st.session_state.conversation = get_conversation_chain(vector_store)
     col1, col2 = st.columns ([1,2])
     with col1:
-        st.image('AI_Medicare_logo.png', width=200)
+        st.image('logo.png', width=200)
     with col2:
-        st.header("AI_Medicare")
+        st.header("AI_JurisCare")
         st.text("Tu asistente virtual")
-        st.text ("La Inteligencia Artificial al servicio de la salud")
+        st.text ("La Inteligencia Artificial al servicio de la ley")
         st.info("Interactúa con nuestro chat y descubre que es lo que la IA puede hacer por tu negocio o proyecto")
         
-    st.write("<h5><br>Pregunte lo que necesite sobre AI medicare, no importa el idioma, somos multiculturales!:</h5>", unsafe_allow_html=True)
+    st.write("<h5><br>Pregunte lo que necesite sobre AI JurisCare, no importa el idioma, somos multiculturales!:</h5>", unsafe_allow_html=True)
     user_question = st.text_input(label="", placeholder="Dinos quien eres y que haces y podremos ayudarte mejor...")
     if user_question:
         handle_userInput(user_question)
 
     # Agregar el botón de WhatsApp
-    whatsapp_message = "Quiero más info acerca de AI Medicare"
+    whatsapp_message = "Quiero más info acerca de AI JurisCare"
     whatsapp_number = "+5930993513082"
     whatsapp_link = f"https://wa.me/{whatsapp_number}?text={whatsapp_message.replace(' ', '%20')}"
     whatsapp_button = f"""
